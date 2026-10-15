@@ -1,7 +1,6 @@
-```yaml
 name: Python Playwright Tests
 
-on:
+'on':
   push:
   pull_request:
   workflow_dispatch:
@@ -44,4 +43,3 @@ jobs:
             reports/
             artifacts/
           if-no-files-found: warn
-```
