@@ -26,7 +26,7 @@ pipeline {
             steps {
                 bat 'if not exist reports mkdir reports'
                 bat 'if not exist artifacts mkdir artifacts'
-                bat 'python -m pytest -v --env=qa --browser chromium'
+                bat 'python -m pytest -v --env=qa --browser chromium -n 2'
             }
         }
     }
@@ -41,6 +41,7 @@ pipeline {
                 alwaysLinkToLastBuild: true,
                 allowMissing: true
             ])
+
             archiveArtifacts artifacts: 'reports/**, artifacts/**',
                              allowEmptyArchive: true
         }
